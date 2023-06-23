@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #053a5f;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 10px;
+  word-spacing: 5px;
+}
+
+.container {
+  width: 440px;
+  padding: 50px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.inputContainer input {
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  padding: 0 30px;
+  border: 1px solid #053a5f;
+  border-radius: 10px;
+  outline: none;
+}
+
+.inputContainer i {
+  font-size: 24px;
+  color: #053a5f;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.securityBar {
+  margin-top: 10px;
+  width: 25%;
+  height: 5px;
+  background-color: red;
+  border-radius: 5px;
+  transition: 1s ease-in-out;
+}
+
+.rangeContainer {
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rangeContainer input {
+  width: 90%;
+  accent-color: #053a5f;
+  cursor: pointer;
+}
+
+.rangeContainer span {
+  font-weight: 600;
+}
+
+h5 {
+  margin-bottom: 15px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.checkboxContainer {
+  width: 50%;
+  display: inline;
+}
+
+.btn {
+  font-size: 24px;
+  width: 100%;
+  height: 50px;
+  color: white;
+  background-color: #053a5f;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+  .checkboxContainer {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .row {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+}
