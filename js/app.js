@@ -31,15 +31,8 @@ const generatePassword = () => {
     const regEx = /[!@#$%^&*()]/g;
     relatedChars += allChars.match(regEx).join("");
   }
-  if (checkBoxes[5].checked) {
-    allChars += " ";
-  }
-  console.log(relatedChars);
 
   if (relatedChars) {
-    if (checkBoxes[5].checked) {
-      relatedChars += " ";
-    }
     if (checkBoxes[4].checked) {
       for (let i = 0; i < range.value; i++) {
         let flag = 0;
@@ -56,10 +49,24 @@ const generatePassword = () => {
           password[i] = letter;
         }
       }
+      if (checkBoxes[5].checked) {
+        for (let i = 0; i < range.value; i++) {
+          if (i % 3 === 0 && i !== 0) {
+            password[i] = " ";
+          }
+        }
+      }
     } else {
       for (let i = 0; i < range.value; i++) {
         password[i] =
           relatedChars[Math.floor(Math.random() * relatedChars.length)];
+      }
+      if (checkBoxes[5].checked) {
+        for (let i = 0; i < range.value; i++) {
+          if (i % 3 === 0 && i !== 0) {
+            password[i] = " ";
+          }
+        }
       }
     }
   } else {
@@ -79,15 +86,30 @@ const generatePassword = () => {
           password[i] = letter;
         }
       }
+      if (checkBoxes[5].checked) {
+        for (let i = 0; i < range.value; i++) {
+          if (i % 3 === 0 && i !== 0) {
+            password[i] = " ";
+          }
+        }
+      }
     } else {
       for (let i = 0; i < range.value; i++) {
         password[i] = allChars[Math.floor(Math.random() * allChars.length)];
+      }
+      if (checkBoxes[5].checked) {
+        for (let i = 0; i < range.value; i++) {
+          if (i % 3 === 0 && i !== 0) {
+            password[i] = " ";
+          }
+        }
       }
     }
   }
 
   password = password.join("");
   passwordPlace.value = password;
+  console.log(password);
 };
 
 const securityLevelShow = () => {
